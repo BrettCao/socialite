@@ -91,8 +91,8 @@ class WeChatProvider extends AbstractProvider implements ProviderInterface
         if (in_array('snsapi_login', $this->scopes)) {
             $path = 'qrconnect?device=pc';
         }
-        $url = env('PROXY_DOMAIN','open.weixin.qq.com');
-        return $this->buildAuthUrlFromBase("https://".$url."/connect/{$path}", $state);
+        $url = env('PROXY_DOMAIN','https://open.weixin.qq.com');
+        return $this->buildAuthUrlFromBase($url."/connect/{$path}", $state);
     }
 
     /**
